@@ -1,0 +1,14 @@
+{
+  "name": "cml",
+  "version": "1.0.0",
+  "description": "Component Markup Language for building single page applications",
+  "main": "lib/cml.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "allen@nocturn.io",
+  "license": "MIT"
+}
