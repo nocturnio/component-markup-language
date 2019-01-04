@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <title>{{displayName}}</title>
+    <link rel="stylesheet" href="https://nocturn.io/plugins/cml.css?v={{version}}">
+    <script type="text/javascript" src="https://nocturn.io/plugins/jquery.js?v={{version}}"></script>
+  </head>
+  <body>
+    <header>
+        <a id="page-swap" href="/">
+        </a>
+    </header>
+    <main>
+        <div id="loader" class="loader {{appLoadingOn}}">
+            <img src="{{appLogoImg}}">
+        </div>
+        <div id="cards" class="cards">
+        </div>
+    </main>
+    <script type="text/javascript" src="{{runtime}}"></script>
+    {{plugins}}
+    {{script}}
+  </body>
+</html>
