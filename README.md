@@ -138,7 +138,7 @@ Card textCard(someText) {
 CML is designed to be customizable.
 It fits into the existing web ecosystem because the boundaries of CML use plain javascript objects.
 For the programmer using the component in CML, it does not matter whether the component is made in React, Vue, or plain javascript.
-The interface remains the same because CML is an abstraction over the implementation details.
+The interface remains the same because CML creates an abstraction over the implementation details.
 
 **Add a component to CML**
 ``` javascript
