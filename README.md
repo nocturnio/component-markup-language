@@ -9,7 +9,7 @@ CML creates a clear barrier between library creation and library consumption.
 In the library creation layer, web programmers can create components using tools they are familiar with.
 In the library consumption layer, programmers can use components in a simplified interface without worrying about the implementation details.
 
-### How to use
+## How to use
 
 **Compilers**
 
@@ -21,7 +21,7 @@ In the library consumption layer, programmers can use components in a simplified
 npm install component-markup-language
 ```
 
-### Syntax
+## Syntax
 
 CML is designed around a simple JSON-like syntax.
 Think of it as a stencil for organizing your javascript.
@@ -69,7 +69,7 @@ Module moduleName(parameters, ...) {
 }
 ```
 
-### Runtime
+## Runtime
 
 The runtime is process based. Meaning each module can be spawned with **cml.new**.
 The one exception is the main module which is specified in the app.json file.
@@ -133,7 +133,7 @@ Card textCard(someText) {
 }
 ```
 
-### Customization
+## Customization
 
 CML is designed to be customizable.
 It fits into the existing web ecosystem because the boundaries of CML use plain javascript objects.
