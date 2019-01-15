@@ -4,78 +4,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <title>{{displayName}}</title>
-
-    <!-- Fonts CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Highlight.js CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css">
-
-    <!-- Materialize CSS -->
-    <link rel="stylesheet" href="https://nocturn.io/plugins/materialize.css?v={{version}}">
-
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-
-    <!-- CML CSS -->
     <link rel="stylesheet" href="https://nocturn.io/plugins/cml.css?v={{version}}">
-
-    <script type="text/javascript" src="https://nocturn.io/plugins/jquery.js"></script>
+    <script type="text/javascript" src="https://nocturn.io/plugins/jquery.js?v={{version}}"></script>
   </head>
-  <body id="body">
-    <header id="header">
-      <!-- Backup Sidenav button -->
-      <a id="side-nav-button" href="#" data-activates="side-nav-list" class="button-collapse hide-on-large-only display-none"><i class="material-icons">menu</i></a>
-
-      <div id="navbar">
-      </div>
-      <div id="side-nav" class="side-nav-container" style="z-index:999">
-
-      </div>
-      <a id="page-swap" href="/">
-      </a>
+  <body>
+    <header>
+        <a id="page-swap" href="/">
+        </a>
     </header>
-
-    <main id="main">
-      <div id="loader" class="loader animated {{appLoadingOn}}">
-        <div class="row">
-          <div class="col s6 offset-s3 img-container">
+    <main>
+        <div id="loader" class="loader {{appLoadingOn}}">
             <img src="{{appLogoImg}}">
-          </div>
         </div>
-
-        <div class="row">
-          <div class="progress col s6 offset-s3">
-            <div class="indeterminate"></div>
-          </div>
+        <div id="cards" class="cards">
         </div>
-      </div>
-
-      <div id="banner">
-      </div>
-
-      <div id="cards" class="cards container">
-      </div>
     </main>
-
-    <div id="modal" class="modal touch-scroll">
-    </div>
-    <div id="modal-fixed-footer" class="modal modal-fixed-footer touch-scroll">
-    </div>
-    <div id="collapsibles-bin" class="display-none"></div>
-    <input class="display-none" id="version" type="text" value="{{version}}">
-    <a class="display-none" href="https://nocturn.io/static.html"></a>
-
-    <!-- Scripts -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript" src="https://nocturn.io/plugins/highlight.pack.js?v={{version}}"></script>
-    <script type="text/javascript" src="https://nocturn.io/plugins/Sortable.min.js?v={{version}}"></script>
-    <script type="text/javascript" src="https://nocturn.io/plugins/page.js?v={{version}}"></script>
     <script type="text/javascript" src="{{runtime}}"></script>
     {{plugins}}
     {{script}}
