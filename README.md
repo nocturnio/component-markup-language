@@ -22,6 +22,7 @@ npm install component-markup-language
 ```
 
 **As a Browser Compatible File**
+
 Requires __[Browserify](browserify.org)__ and __[Babel](https://babeljs.io)__
 ```
 browserify lib/cml-browser.js -o <file-name>.js
