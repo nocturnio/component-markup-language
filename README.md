@@ -32,7 +32,7 @@ babel <file-name>.js -o <file-name>.js
 ## Syntax
 
 CML is designed around a simple JSON-like syntax.
-Think of it as a stencil for organizing your javascript.
+Think of it as an organizer for your javascript.
 
 **Example**
 ``` javascript
