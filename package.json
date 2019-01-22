@@ -1,14 +1,18 @@
 {
-  "name": "component-markup-language",
-  "version": "1.4.200",
-  "description": "Component Markup Language for building single page applications",
-  "main": "lib/cml.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "allen@nocturn.io",
-  "license": "MIT"
+    "name": "component-markup-language",
+    "version": "1.4.200",
+    "description": "Component Markup Language for building single page applications",
+    "main": "lib/cml.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "allen@nocturn.io",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nocturnio/component-markup-language.git"
+    }
 }
