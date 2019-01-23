@@ -1,6 +1,6 @@
 {
     "name": "component-markup-language",
-    "version": "1.4.203",
+    "version": "1.4.204",
     "description": "Component Markup Language for building single page applications",
     "main": "lib/cml.js",
     "directories": {
