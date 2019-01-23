@@ -11,7 +11,7 @@ In the library consumption layer, programmers can use components in a simplified
 
 ## How to use
 
-**Compilers**
+**Implementations**
 
 * __[nocturn.io web editor](https://nocturn.io)__
 * __[noct CLI](https://www.npmjs.com/package/noct)__
@@ -147,6 +147,9 @@ CML is designed to be customizable.
 It fits into the existing web ecosystem because the boundaries of CML use plain javascript objects.
 For the programmer using the component in CML, it does not matter whether the component is made in React, Vue, or plain javascript.
 The interface remains the same because CML creates an abstraction over the implementation details.
+
+__[Nocturn UI](https://github.com/nocturnio/nocturn-ui)__ is an implementation of a CML.
+With CML customization, you can add onto a library like Nocturn UI or create your own UI library from scratch.
 
 **Add a component to CML**
 ``` javascript
