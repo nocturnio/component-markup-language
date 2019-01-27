@@ -17,9 +17,14 @@ In the library consumption layer, programmers can use components in a simplified
 * __[noct CLI](https://www.npmjs.com/package/noct)__
 
 **As a NPM module**
+
+In a npm project directory
+
 ```
 npm install component-markup-language
 ```
+
+__[Compiler Docs](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler-api.md)__
 
 **As a Browser Compatible File**
 
