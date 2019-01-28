@@ -2,8 +2,8 @@
 # Component Markup language
 
 CML is a markup language for creating Single Page Applications.
-The primary goal of CML is to make frontend development more accessible.
-CML takes the complexity of frontend development and creates an interface that any programmer would understand.
+The primary goal of CML is to make frontend development more accessible without making sacrifices to customization and precision.
+CML takes the complexity out of frontend development and creates an interface that any programmer would understand.
 
 The secondary goal of CML is to consolidate UI libraries and help organize projects.
 CML creates a clear barrier between library creation and library consumption.
