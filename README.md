@@ -1,3 +1,4 @@
+
 # Component Markup language
 
 CML is a markup language for creating Single Page Applications.
@@ -19,17 +20,18 @@ In the library consumption layer, programmers can use components in a simplified
 
 ### As a NPM package
 
+Step 1: Install in your package directory
 ```
 npm install component-markup-language
 ```
 
-**In Node.js**
+Step 2: Choose if you want to use CML compiler on the backend or frontend
 
-__[API Reference](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler-api.md)__
+__[**Node.js API**](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler-api.md)__
 
-**In javascript (browser)**
+__[**Javascript (browser) API**](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler-browser-api.md)__
 
-__[API Reference](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler-browser-api.md)__
+Step 3 (Optional): If frontend is chosen in step 2, we need to create a browser compatible js file.
 
 Requires __[Browserify](browserify.org)__ and __[Babel](https://babeljs.io)__
 
@@ -40,8 +42,7 @@ babel <file-name>.js -o <file-name>.js
 
 ## Syntax
 
-CML is designed around a simple JSON-like syntax.
-Think of it as an organizer for your javascript.
+CML is designed around a simple JSON-like syntax. Think of it as an organizer for your javascript.
 
 **Example**
 ``` javascript
