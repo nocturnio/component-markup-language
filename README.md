@@ -11,24 +11,28 @@ In the library consumption layer, programmers can use components in a simplified
 
 ## How to use
 
-**Implementations**
+### Compilers
 
 * __[nocturn.io web editor](https://nocturn.io)__
 * __[noct CLI](https://www.npmjs.com/package/noct)__
 
-**As a NPM module**
 
-In a npm project directory
+### As a NPM package
 
 ```
 npm install component-markup-language
 ```
 
-__[Compiler Docs](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler-api.md)__
+**In Node.js**
 
-**As a Browser Compatible File**
+__[API Reference](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler-api.md)__
+
+**In javascript (browser)**
+
+__[API Reference](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler-browser-api.md)__
 
 Requires __[Browserify](browserify.org)__ and __[Babel](https://babeljs.io)__
+
 ```
 browserify lib/cml-browser.js -o <file-name>.js
 babel <file-name>.js -o <file-name>.js

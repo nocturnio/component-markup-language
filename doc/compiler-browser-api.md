@@ -1,4 +1,4 @@
-# CML Compiler API
+# CML Compiler API (browser)
 
 ## .cmlToJs
 
@@ -85,81 +85,4 @@ fs.readFile("cml/exampleFile.cml", function (data, err) {
     var jsCode = cml.astToJs(jsCode);
     fs.writeFile("js/exampleFile.js", jsCode);
 });
-```
-
-## .buildProject
-
-``` javascript
-cml.buildProject(project);
-```
-
-The method `buildProject` compiles an html page and a javascript file for running a CML project.
-
-**Arguments**
-
-project (__[Project](https://github.com/nocturnio/component-markup-language/blob/master/doc/project.md)__): Project object
-
-**Returns**
-
-[result={}] (Object): compiled result
-[result.html] (string): compiled html code
-[result.js] (string): compile javascript code
-
-**Example**
-
-``` javascript
-const fs = require("fs");
-const cml = require("component-markup-language");
-
-files.forEach((cmlCode) => {
-    cml.buildProject(project, templateHTML);
-});
-
-fs.readFile("cml/exampleFile.cml", function (data, err) {
-    var cmlCode = "" + data; // cast to string
-    var ast = cml.cmlToAst(cmlCode);
-    var jsCode = cml.astToJs(jsCode);
-    fs.writeFile("js/exampleFile.js", jsCode);
-});
-```
-
-## .version
-
-``` javascript
-cml.version
-```
-
-(string): The semantic version number of CML.
-
-**Example**
-
-``` javascript
-const cml = require("component-markup-language");
-
-var version = cml.version; // ex. 1.4.78
-
-```
-
-## .runtimeFile
-
-``` javascript
-cml.runtimeFile
-```
-
-(string): path to the runtime file. Needed to run compiled javascript.
-
-**Example**
-
-``` javascript
-const fs = require("fs");
-const cml = require("component-markup-language");
-
-fs.readFile(cml.runtimeFile, function (data, err) {
-    var jsCode = "" + data; // cast to string
-    fs.writeFile("js/cml-runtime.js", jsCode);
-});
-```
-
-``` html
-<script type="text/javascript" src="js/cml-runtime.js"></script>
 ```
