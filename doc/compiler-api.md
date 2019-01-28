@@ -95,7 +95,7 @@ The method `buildProject` compiles an html page and a javascript file for runnin
 
 **Arguments**
 
-[project] (__[Project](https://github.com/nocturnio/component-markup-language/blob/master/doc/project.md)__): Project object
+project (__[Project](https://github.com/nocturnio/component-markup-language/blob/master/doc/project.md)__): Project object
 
 **Returns**
 
