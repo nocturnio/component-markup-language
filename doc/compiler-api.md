@@ -101,9 +101,7 @@ project (__[Project](https://github.com/nocturnio/component-markup-language/blob
 
 **Returns**
 
-[result={}] (Object): compiled result
-[result.html] (string): compiled html code
-[result.js] (string): compile javascript code
+(__[ProjectResult](https://github.com/nocturnio/component-markup-language/blob/master/doc/projectResult.md)__): compiled result
 
 **Example**
 
@@ -112,14 +110,9 @@ const fs = require("fs");
 const cml = require("component-markup-language");
 
 files.forEach((cmlCode) => {
-    cml.buildProject(project, templateHTML);
-});
-
-fs.readFile("cml/exampleFile.cml", function (data, err) {
-    var cmlCode = "" + data; // cast to string
-    var ast = cml.cmlToAst(cmlCode);
-    var jsCode = cml.astToJs(jsCode);
-    fs.writeFile("js/exampleFile.js", jsCode);
+    var result = cml.buildProject(project, templateHTML);
+    fs.writeFile("index.html", result.html);
+    fs.writeFile("index.js", result.js);
 });
 ```
 
