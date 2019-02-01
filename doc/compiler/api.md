@@ -1,20 +1,22 @@
 # CML Compiler API
 
+The compiler API contains methods for compiling CML code.
+
 ## .cmlToJs
 
 ``` javascript
-cml.cmlToJs(codeStr);
+cml.cmlToJs(codeStr)_;
 ```
 
 `cmlToJs` compiles a CML code string to a javascript code string.
 
 **Arguments**
 
-codeStr (string): a string value in CML format
+codeStr _(string)_: a string value in CML format
 
 **Returns**
 
-(string): a string value in javascript format
+_(string)_: a string value in javascript format
 
 **Example**
 
@@ -37,11 +39,11 @@ The method `cmlToAst` creates an AST from a CML code string.
 
 **Arguments**
 
-codeStr (string): a string value in CML format
+codeStr _(string)_: a string value in CML format
 
 **Returns**
 
-(__[AST](https://github.com/nocturnio/component-markup-language/blob/master/doc/ast.md)__): an abstract syntax tree
+*(__[AST](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/AST.md)__)*: an abstract syntax tree
 
 **Example**
 
@@ -67,11 +69,11 @@ The method `astToJs` converts javascript code from an AST.
 
 **Arguments**
 
-ast (__[AST](https://github.com/nocturnio/component-markup-language/blob/master/doc/ast.md)__): Abstract Syntax Tree object
+ast _(__[AST](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/AST.md)__)_: Abstract Syntax Tree object
 
 **Returns**
 
-(string): a string value in javascript format
+_(string)_: a string value in javascript format
 
 **Example**
 
@@ -97,11 +99,11 @@ The method `buildProject` compiles an html page and a javascript file for runnin
 
 **Arguments**
 
-project (__[Project](https://github.com/nocturnio/component-markup-language/blob/master/doc/project.md)__): Project object
+project _(__[Project](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/Project.md)__)_: Project object
 
 **Returns**
 
-(__[ProjectResult](https://github.com/nocturnio/component-markup-language/blob/master/doc/projectResult.md)__): compiled result
+_(__[ProjectResult](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/ProjectResult.md)__)_: compiled result
 
 **Example**
 
@@ -122,7 +124,7 @@ files.forEach((cmlCode) => {
 cml.version
 ```
 
-(string): The semantic version number of CML.
+_(string)_: The semantic version number of CML.
 
 **Example**
 
@@ -139,7 +141,7 @@ var version = cml.version; // ex. 1.4.78
 cml.runtimeFile
 ```
 
-(string): path to the runtime file. Needed to run compiled javascript.
+_(string)_: path to the runtime file. Needed to run compiled javascript.
 
 **Example**
 

@@ -1,15 +1,6 @@
-# CML API
+# CML Runtime API
 
-| Name | Description |
-| ------ | ----------- |
-| cml.say(message) | Display a toast with message on it |
-| cml.error(message) | Display an error toast with message on it |
-| cml.setLocation(url) | Set url location. If url does not match a Router, a page load will occur. |
-| cml.show(pageName) | Show specified page. All other pages will be hidden. |
-| cml.currentPage | Last page shown using cml.show |
-
-
-
+The Runtime API has methods for creating modules and managing state.
 
 ## .new
 
@@ -22,12 +13,12 @@ This also loads the module onto the UI.
 
 **Arguments**
 
-moduleName (string): name of module be instanced
-[params] (...\*): parameters to apply to module constructor
+moduleName _(string)_: name of module be instanced
+[params] _(...\*)_: parameters to apply to module constructor
 
 **Returns**
 
-(__[Module](https://github.com/nocturnio/component-markup-language/blob/master/doc/module.md)__): loaded module instance
+*(__[Module](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__)*: loaded module instance
 
 **Example**
 
@@ -79,8 +70,8 @@ This method also removes the app loader.
 
 **Arguments**
 
-[options = {}] (Object): options object
-[options.loader] (string): loader animation class name
+[options = {}] _(Object)_: options object
+[options.loader] _(string)_: loader animation class name
 
 **Example**
 
@@ -111,9 +102,10 @@ cml.modules()
 Returns all loaded module instances.
 
 **Returns**
-(Array): array of __[modules](https://github.com/nocturnio/component-markup-language/blob/master/doc/module.md)__ instances
+_(Array)_: array of __[modules](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__ instances
 
 **Example**
+
 ``` javascript
 Module main {
     load() {        
@@ -137,13 +129,14 @@ Get all modules of `moduleName`
 
 **Arguments**
 
-moduleName (string): module type to filter
+moduleName _(string)_: module type to filter
 
 **Returns**
 
-(Array): array of __[modules](https://github.com/nocturnio/component-markup-language/blob/master/doc/module.md)__ that match moduleName
+_(Array)_: array of __[modules](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__ that match moduleName
 
 **Example**
+
 ``` javascript
 Module main {
     load() {        
@@ -168,13 +161,14 @@ Get first module matching `moduleName`
 
 **Arguments**
 
-moduleName (string): module type to filter
+moduleName _(string)_: module type to filter
 
 **Returns**
 
-(__[Module](https://github.com/nocturnio/component-markup-language/blob/master/doc/module.md)__): first module that matches moduleName
+*(__[Module](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__)*: first module that matches moduleName
 
 **Example**
+
 ``` javascript
 Module main {
     load() {        
@@ -197,6 +191,8 @@ cml.refresh()
 
 Runs refresh methods for all components.
 Will only refresh if value is different.
+
+**Example**
 
 ``` javascript
 DIV foo(model) {
@@ -227,5 +223,125 @@ DIV bar(model) {
             cml.refresh();
         }
     }
+}
+```
+
+## .show
+
+``` javascript
+cml.show(pageName)
+```
+
+`.show` displays a page while hiding all other pages.
+
+**Arguments**
+
+pageName _(string)_: name of page to switch to
+
+**Example**
+
+``` javascript
+DIV main {
+    load() {
+        cml.new("stuff");
+        cml.new("stuff2");
+
+    }
+    INPUT {
+        type: "button"
+        value: "page 1"
+        click(e) {
+            cml.show("page-1");
+        }
+    }
+    INPUT {
+        type: "button"
+        value: "page 2"
+        click(e) {
+            cml.show("page-2");
+        }
+    }
+}
+
+DIV stuff {
+    container: "page-1"
+    innerHTML: "This is on page 1"
+}
+
+DIV stuff2 {
+    container: "page-2"
+    innerHTML: "This is on page 2"
+}
+```
+
+## .currentPage
+
+`.currentPage` is the current page.  When `.show` is called the current page will change to page name specified.
+
+_(string)_: name of the current page
+
+## .setLocation
+
+``` javascript
+cml.setLocation(url)
+```
+
+`.setLocation` will change the current location without a page load. If there is no matching Router, then a page load will be made.
+
+**Arguments**
+
+url _(string)_: url to switch to
+
+**Example**
+
+``` javascript
+DIV main {
+    load() {
+        cml.new("stuff");
+        cml.new("stuff2");
+
+    }
+    INPUT {
+        type: "button"
+        value: "page 1"
+        click(e) {
+            cml.setLocation("/page/1");
+        }
+    }
+    INPUT {
+        type: "button"
+        value: "page 2"
+        click(e) {
+            cml.setLocation("/page/1");
+        }
+    }
+    Router {
+        url: "/page/1"
+        route(context) {
+            cml.show("page1");
+        }
+    }
+    Router {
+        url: "/page/2"
+        route(context) {
+            cml.show("page2");
+        }
+    }
+    Router {
+        url: "*"
+        route(context) {
+            alert("No page found");
+        }
+    }
+}
+
+DIV stuff {
+    container: "page-1"
+    innerHTML: "This is on page 1"
+}
+
+DIV stuff2 {
+    container: "page-2"
+    innerHTML: "This is on page 2"
 }
 ```
