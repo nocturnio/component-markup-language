@@ -42,11 +42,11 @@ ast.value
 ast.compile()
 ```
 
-`ast.compile` generates an Intermediate Representation (__[IR](https://github.com/nocturnio/component-markup-language/blob/master/doc/ir.md)__), formatted in JSON
+`ast.compile` generates an Intermediate Representation (__[IR](https://github.com/nocturnio/component-markup-language/blob/master/doc/IR.md)__), formatted in JSON
 
 **Returns**
 
-(string): IR object in JSON string, __[IR Doc](https://github.com/nocturnio/component-markup-language/blob/master/doc/ir.md)__
+(string): IR object in JSON string, __[IR Doc](https://github.com/nocturnio/component-markup-language/blob/master/doc/IR.md)__
 
 **Example**
 

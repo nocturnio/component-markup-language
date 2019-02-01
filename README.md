@@ -20,18 +20,14 @@ In the library consumption layer, programmers can use components in a simplified
 
 ### As a NPM package
 
-Step 1: Install in your package directory
+**Step 1**: Install in package directory.
 ```
 npm install component-markup-language
 ```
 
-Step 2: Choose if you want to use CML compiler on the backend or frontend
+**Step 2**: Choose between the frontend or backend CML compiler.
 
-__[**Node.js API**](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler-api.md)__
-
-__[**Javascript (browser) API**](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler-browser-api.md)__
-
-Step 3 (Optional): If frontend is chosen in step 2, we need to create a browser compatible js file.
+**Step 3 (Optional)**: If frontend, create a browser compatible js file.
 
 Requires __[Browserify](browserify.org)__ and __[Babel](https://babeljs.io)__
 
@@ -40,9 +36,12 @@ browserify lib/cml-browser.js -o <file-name>.js
 babel <file-name>.js -o <file-name>.js
 ```
 
+**Step 4**: Read the __[CML Compiler API](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/api.md)__.
+
+
 ## Syntax
 
-CML is designed around a simple JSON-like syntax. Think of it as an organizer for your javascript.
+CML is designed around a simple JSON-like syntax. As a superset of javascript, CML allows one to write any valid javascript code within a Module.
 
 **Example**
 ``` javascript
@@ -92,27 +91,23 @@ Module moduleName(parameters, ...) {
 The runtime is process based. Meaning each module can be spawned with **cml.new**.
 The one exception is the main module which is specified in the app.json file.
 
+__[CML Runtime API](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/api.md)__.
+
 **Example**
 ``` javascript
-/*
-** This Module will create 3 textCards with someText preloaded. (main module)
-*/
-Module appStart() {
+Module main {
     load() {
-        ["hello", "world", "goodbye"].forEach(function (msg) {
-            cml.new("textCard", msg);
-        });
+        cml.new("textCard", 0);
     }
 }
-/*
-** This Module is a simple Card with text on it
-*/
-Card textCard(someText) {
+Card textCard(text) {
     Text {
-        value: someText
+        value: text
     }
 }
 ```
+
+### Data Refresh
 
 Properties in CML can be refreshed using **cml.refresh**.
 When refreshing we update the its value and also its HTML representation.
@@ -121,51 +116,49 @@ To make a property refresh we simply define it as a function whose return will b
 The method **cml.refresh** will only re-render properties whose value is different.
 In this example, once textCard is clicked the value will stay as "cleared" and not modify the underlying HTML anymore.
 
-**Example using refresh**
+**Example**
 ``` javascript
-/*
-** This Module will create 3 textCards with someText preloaded. (main module)
-*/
-Module appStart() {
+Module main {
     load() {
-        ["hello", "world", "goodbye"].forEach(function (msg) {
-            cml.new("textCard", msg);
-        });
+        var model = {
+            count: 0
+        };
+        cml.new("textCard", model);
+        cml.new("counterCard", model);
     }
 }
-/*
-** This Module is a simple Card with text on it.
-** Now this Card will change its Text value to "cleared" when clicked.
-*/
-Card textCard(someText) {
-    textValue: someText
-    click() {
-        self.textValue: "cleared"
-        cml.refresh();
-    }
+Card textCard(model) {
     Text {
         value() {
-            return self.textValue;
+            return model.count;
+        }
+    }
+}
+Card counterCard(model) {
+    Button {
+        label: "Minus 1"
+        click(e) {
+            model.count--;
+            cml.refresh();
+        }
+    }
+    Button {
+        label: "Plus 1"
+        click(e) {
+            model.count++;
+            cml.refresh();
         }
     }
 }
 ```
 
-## Customization
+## Inter-op with javascript
 
 CML is designed to be customizable.
-It fits into the existing web ecosystem because the boundaries of CML use plain javascript objects.
-For the programmer using the component in CML, it does not matter whether the component is made in React, Vue, or plain javascript.
-The interface remains the same because CML creates an abstraction over the implementation details.
-
-__[Nocturn UI](https://github.com/nocturnio/nocturn-ui)__ is an implementation of a CML.
-With CML customization, you can add onto a library like Nocturn UI or create your own UI library from scratch.
+It can inter-op with the existing javascript ecosystem using the __[CML Extension API](https://github.com/nocturnio/component-markup-language/blob/master/doc/extension/api.md)__.
 
 **Add a component to CML**
 ``` javascript
-/*
-** Adds a component named Notification to CML
-*/
 cml.addComponent({
     class: "Notification",
     create: function (p, m) {
@@ -179,9 +172,6 @@ cml.addComponent({
 
 **Using the component in CML**
 ``` javascript
-/*
-** Creates a Card with a Notification component
-*/
 Card notificationCard {
     Notification {
         label: "hello"
@@ -192,3 +182,59 @@ Card notificationCard {
 **Example of using CML with React**
 
 __[Click Here](https://medium.com/@nocturn4390/making-custom-components-for-cml-15f671b00531)__
+
+## Example
+
+We can redo our counter example with a custom component.
+
+**Counter Component**
+``` javascript
+cml.addComponent({
+    class: "Counter",
+    create: function (p, m) {
+        var countText = cml.createComponent({
+            value: function () {
+                return cml.extract(p, "model").count;
+            }
+        }, m, "Text");
+        var minusButton = cml.createComponent({
+            label: cml.extract(p, "minusLabel"),
+            click: function (e) {
+                cml.extract(p, "model").count--;
+                cml.runtime.refresh();
+            }
+        }, m, "Button");
+        var plusButton = cml.createComponent({
+            label: cml.extract(p, "plusLabel"),
+            click: function (e) {
+                cml.extract(p, "model").count++;
+                cml.runtime.refresh();
+            }
+        }, m, "Button");
+        var el = document.createElement("DIV");
+        el.appendChild(countText);
+        el.appendChild(minusButton);
+        el.appendChild(plusButton);
+        return el;
+    }
+});
+```
+
+**Using our Counter Component**
+``` javascript
+Module main {
+    load() {
+        var model = {
+            count: 0
+        };
+        cml.new("counterCard", model);
+    }
+}
+Card counterCard(model) {
+    Counter {
+        model: model
+        minusLabel: "Minus 1"
+        plusLabel: "Plus 1"        
+    }
+}
+```
