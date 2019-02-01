@@ -69,7 +69,7 @@ The method `astToJs` converts javascript code from an AST.
 
 **Arguments**
 
-ast _(__[AST](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/AST.md)__)_: Abstract Syntax Tree object
+ast *(__[AST](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/AST.md)__)*: Abstract Syntax Tree object
 
 **Returns**
 
@@ -99,11 +99,11 @@ The method `buildProject` compiles an html page and a javascript file for runnin
 
 **Arguments**
 
-project _(__[Project](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/Project.md)__)_: Project object
+project *(__[Project](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/Project.md)__)*: Project object
 
 **Returns**
 
-_(__[ProjectResult](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/ProjectResult.md)__)_: compiled result
+*(__[ProjectResult](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/ProjectResult.md)__)*: compiled result
 
 **Example**
 
