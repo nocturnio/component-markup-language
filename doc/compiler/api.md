@@ -5,7 +5,7 @@ The compiler API contains methods for compiling CML code.
 ## .cmlToJs
 
 ``` javascript
-cml.cmlToJs(codeStr)_;
+cml.cmlToJs(codeStr, [moduleName="[no name specified]"])_;
 ```
 
 `cmlToJs` compiles a CML code string to a javascript code string.
@@ -13,10 +13,12 @@ cml.cmlToJs(codeStr)_;
 **Arguments**
 
 codeStr _(string)_: a string value in CML format
+[moduleName="[no name specified]"] _(string)_: name of module
 
 **Returns**
 
 _(string)_: a string value in javascript format
+[moduleName="[no name specified]"] _(string)_: name of module
 
 **Example**
 
@@ -32,7 +34,7 @@ fs.readFile("cml/exampleFile.cml", function (data, err) {
 ```
 ## .cmlToAst
 ``` javascript
-cml.cmlToAst(codeStr);
+cml.cmlToAst(codeStr, [moduleName="[no name specified]"]);
 ```
 
 The method `cmlToAst` creates an AST from a CML code string.
@@ -40,6 +42,7 @@ The method `cmlToAst` creates an AST from a CML code string.
 **Arguments**
 
 codeStr _(string)_: a string value in CML format
+[moduleName="[no name specified]"] _(string)_: name of module
 
 **Returns**
 
@@ -62,7 +65,7 @@ fs.readFile("/cml/exampleFile.cml", function (data, err) {
 ## .astToJs
 
 ``` javascript
-cml.astToJs(ast);
+cml.astToJs(ast, [moduleName="[no name specified]"]);
 ```
 
 The method `astToJs` converts javascript code from an AST.
@@ -74,6 +77,7 @@ ast *(__[AST](https://github.com/nocturnio/component-markup-language/blob/master
 **Returns**
 
 _(string)_: a string value in javascript format
+[moduleName="[no name specified]"] _(string)_: name of module
 
 **Example**
 
