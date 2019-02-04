@@ -107,6 +107,15 @@ Card textCard(text) {
 }
 ```
 
+**Compile Runtime File**
+
+Requires __[Browserify](browserify.org)__ and __[Babel](https://babeljs.io)__
+
+```
+browserify lib/runtime/cml-runtime.js -o <file-name>.js
+babel <file-name>.js -o <file-name>.js
+```
+
 ### Data Refresh
 
 Properties in CML can be refreshed using **cml.refresh**.
