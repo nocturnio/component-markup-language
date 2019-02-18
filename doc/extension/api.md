@@ -98,6 +98,7 @@ moduleName _(string)_: name of module definition
 *(__[ModuleDefinition](https://github.com/nocturnio/component-markup-language/blob/master/doc/extension/ModuleDefinition.md)__)*: module definition
 
 ## .getComponent
+
 ``` javascript
 cml.getComponent(componentName, [moduleName="GLOBAL"])
 ```
@@ -115,9 +116,12 @@ componentName _(string)_: name of component definition
 *(__[ComponentDefinition](https://github.com/nocturnio/component-markup-language/blob/master/doc/extension/ComponentDefinition.md)__)*: component definition
 
 ## .createComponent
+
 ``` javascript
 cml.createComponent(p, m, componentName, [moduleName])
 ```
+
+Load a component dynamically. Useful for creating child components.
 
 **Arguments**
 
@@ -134,9 +138,12 @@ componentName _(string)_: component type to create
 _(\* | HTMLElement)_: output of `componentDefinition.create`
 
 ## .createMapItems
+
 ``` javascript
-cml.createMapItems(p, m, el, componentName, [moduleName="GLOBAL"])
+cml.createMapItems(p, m, el, componentName, [moduleName="GLOBAL"], [preloadedItems=null])
 ```
+
+Loads a list of components dynamically. Will be generated from p.items and p.map. Created elements will be appended to el.
 
 **Arguments**
 
@@ -149,6 +156,8 @@ el _(HTMLElement)_: component html element
 componentName _(string)_: component type to create
 
 [moduleName="GLOBAL"] _(string)_: module scope of the component definition
+
+[preloadedItems=null] _(Array)_: preloaded items, if not provided items will be extracted from p.items
 
 **Returns**
 
