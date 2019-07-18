@@ -39,8 +39,13 @@ A ComponentDefinition is a template for creating a module type. After adding a M
         }
     },
     create: function (p, self, dom) {
-        // create logic
+        // create module element
         var el = document.createElement("DIV");
+
+        // append child components
+        dom.components.forEach(function (componentEl) {
+            el.appendChild(componentEl);
+        });
 
         // append el to a container
         document.getElementById("main").appendChild(el);

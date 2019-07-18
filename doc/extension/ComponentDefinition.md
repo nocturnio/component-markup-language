@@ -48,7 +48,12 @@ A ComponentDefinition is a template for creating a component type. After adding 
         }        
     },
     create: function (p, m) {
+        // create component element
+        var el = document.createElement("p");
 
+        el.appendChild(document.createTextNode("Empty Component"));
+
+        return el;
     },
     instance: function (p, m, el) {
 
