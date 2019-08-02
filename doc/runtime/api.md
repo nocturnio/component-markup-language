@@ -226,60 +226,6 @@ DIV bar(model) {
 }
 ```
 
-## .show
-
-``` javascript
-cml.show(pageName)
-```
-
-`.show` displays a page while hiding all other pages.
-
-**Arguments**
-
-pageName _(string)_: name of page to switch to
-
-**Example**
-
-``` javascript
-DIV main {
-    load() {
-        cml.new("stuff");
-        cml.new("stuff2");
-
-    }
-    INPUT {
-        type: "button"
-        value: "page 1"
-        click(e) {
-            cml.show("page-1");
-        }
-    }
-    INPUT {
-        type: "button"
-        value: "page 2"
-        click(e) {
-            cml.show("page-2");
-        }
-    }
-}
-
-DIV stuff {
-    container: "page-1"
-    innerHTML: "This is on page 1"
-}
-
-DIV stuff2 {
-    container: "page-2"
-    innerHTML: "This is on page 2"
-}
-```
-
-## .currentPage
-
-`.currentPage` is the current page.  When `.show` is called the current page will change to page name specified.
-
-_(string)_: name of the current page
-
 ## .setLocation
 
 ``` javascript
@@ -312,25 +258,34 @@ DIV main {
         type: "button"
         value: "page 2"
         click(e) {
-            cml.setLocation("/page/1");
+            cml.setLocation("/page/2");
         }
     }
-    Router {
-        url: "/page/1"
-        route(context) {
-            cml.show("page1");
+    Scene page1 {
+        path: "/page/1"
+        enter(context) {
+            return [
+                view.navbar,
+                view.card1
+            ];
         }
     }
-    Router {
-        url: "/page/2"
-        route(context) {
-            cml.show("page2");
+    Scene page2 {
+        path: "/page/2"
+        enter(context) {
+            return [
+                view.navbar,
+                view.card2
+            ];
         }
     }
-    Router {
-        url: "*"
-        route(context) {
-            alert("No page found");
+    Scene errorPage {
+        path: "*"
+        enter(context) {
+            return [
+                view.navbar,
+                view.errorCard
+            ];
         }
     }
 }
