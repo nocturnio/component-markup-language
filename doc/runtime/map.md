@@ -1,7 +1,68 @@
 # cml.map
 
+## Mapping Priority
+
+cml.map works on a rules table. The rules table has an order of precedence.
+
+For the data object,
+
+``` javascript
+var data = {
+    a: {
+        b: {
+            c: {
+                d: "hello"
+            }
+        }
+    }
+}
+```
+
+Say we want to map the property 'd'. There are a few different rules we can write.
+
+``` javascript
+var rules1 = {
+    "a.b.c.d": "H3"
+};
+
+var rules2 = {
+    "b.c.d": "H3"
+};
+
+var rules3 = {
+    "d": "H3"
+};
+```
+
+All three of these rules will output a module that maps the property data.a.b.c.d to a "H3".
+
+What if we were to merge the rules into one table?
+
+``` javascript
+var rules = {
+    "a.b.c.d": "H1"
+    "b.c.d": "H2"
+        "d": "H3"
+};
+```
+
+With this merged table we also changed the values to "H1", "H2", "H3" so that we can differentiate between their outputs.
+When we have multiple rules that collide in this way we need to know the order of precedence to see which rules will be applied.
+
+In this case, the rule for "a.b.c.d" will be the one matched because the order of precedence matches exact paths first.
+
+The rule priority of cml.map is,
+
+1. exactPath - a.b.c.d
+2. subpath - b.c.d
+3. nameMatch - d
+
+Let's take a look at a bigger example,
+
 **Example**
 ``` javascript
+
+// intentionally made data object convoluted to demonstrate mapping
 var data = {
     a: {
         b: {
@@ -24,10 +85,8 @@ var data = {
 
 var rules = {
     "b.c.d": "H3",
-    x: {
-        d: "IMG"
-    },
-    d: "INPUT"
+    "x.d": "IMG"
+    "d": "INPUT"
 };
 
 cml.map(data, rules, function (self) {
@@ -53,6 +112,13 @@ cml.map(data, rules, function (self) {
 ```
 
 **Maps to**
+
+* data.a.b.c.d => "H3" => module.a_b_c_d
+* data.b.c.d => "H3" => module.b_c_d
+* data.b.d => "INPUT" => module.b_d
+* data.d => "INPUT" => module.d
+* data.x.d => "IMG" => module.x_d
+
 ``` html
 <div>
     <h3 class="a_b_c_d" style="background: red">
@@ -66,26 +132,3 @@ cml.map(data, rules, function (self) {
     <img class="x_d" src="https://cdn.com/somepicture.jpg" width="200">
 </div>
 ```
-
-## Map Priority
-``` javascript
-var data = {
-    a: {
-        b: {
-            c: {
-                d: "hello"
-            }
-        }
-    }
-}
-```
-
-Rule priority
-1. exactPath - a.b.c.d
-2. subpath - b.c.d
-3. nameMatch - d
-
-Name Mapping
-1. exactPath - a_b_c_d
-2. subpath - a_b_c_d
-3. nameMatch - d
