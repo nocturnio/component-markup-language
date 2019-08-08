@@ -107,9 +107,9 @@ cml.map(data, rules, construct)
 
 data _(Object)_: data object for mapping
 
-rules _(Object)_: rules table for mapping data properties to components
+rules *(__[MapRules](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/map.md)__)*: rules table for mapping data properties to components
 
-construct _(Function)_: custom constructor for additional modifications to the output module
+construct _(Function)_: custom constructor for additional modifications to the output module, __[more info](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/map.md)__
 
 **Example**
 
