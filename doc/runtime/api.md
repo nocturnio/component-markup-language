@@ -101,7 +101,7 @@ Module main {
 cml.map(data, rules, construct)
 ```
 
-`cml.map` maps data to a module
+`cml.map` maps data to a module, __[more info](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/map.md)__.
 
 **Arguments**
 
@@ -109,7 +109,7 @@ data _(Object)_: data object for mapping
 
 rules *(__[MapRules](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/map.md)__)*: rules table for mapping data properties to components
 
-construct _(Function)_: custom constructor for additional modifications to the output module, __[more info](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/map.md)__
+construct _(Function)_: custom constructor for additional modifications to the output module.
 
 **Example**
 
