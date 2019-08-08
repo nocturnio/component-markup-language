@@ -93,6 +93,49 @@ Module main {
 }
 ```
 
+## .map
+
+``` javascript
+cml.map(data, rules, construct)
+```
+
+`cml.map` maps data to a module
+
+**Arguments**
+
+data _(Object)_: data object for mapping
+rules _(Object)_: rules table for mapping data properties to components
+construct _(Function)_: custom constructor for additional modifications to the output module
+
+**Example**
+
+``` javascript
+Module main {
+    load() {
+        cml.map({
+            picture: "https://cdn.com/mypicture.jpg",
+            firstName: "Bob",
+            lastName: "Fred",
+            password: "bZ3Es2[(>7%/`*pE"
+        }, {
+            picture: "IMG",
+            firstName: "INPUT",
+            lastName: "INPUT",
+            password: "INPUT"
+        }, (self) => {
+            return {
+                password: {
+                    type: "password"
+                },
+                picture: {
+                    width: 100
+                }
+            };
+        });
+    }
+}
+```
+
 ## .modules
 
 ``` javascript
@@ -171,7 +214,7 @@ moduleName _(string)_: module type to filter
 
 ``` javascript
 Module main {
-    load() {        
+    load() {
         cml.new("foo");
         cml.new("foo");
         cml.new("bar");
