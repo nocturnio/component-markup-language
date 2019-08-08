@@ -14,6 +14,7 @@ This also loads the module onto the UI.
 **Arguments**
 
 moduleName _(string)_: name of module be instanced
+
 [params] _(...\*)_: parameters to apply to module constructor
 
 **Returns**
@@ -71,6 +72,7 @@ This method also removes the app loader.
 **Arguments**
 
 [options = {}] _(Object)_: options object
+
 [options.loader] _(string)_: loader animation class name
 
 **Example**
@@ -104,7 +106,9 @@ cml.map(data, rules, construct)
 **Arguments**
 
 data _(Object)_: data object for mapping
+
 rules _(Object)_: rules table for mapping data properties to components
+
 construct _(Function)_: custom constructor for additional modifications to the output module
 
 **Example**
@@ -279,7 +283,7 @@ cml.setLocation(url)
 
 **Arguments**
 
-url _(string)_: url to switch to
+url _(string)_: url location to switch to
 
 **Example**
 

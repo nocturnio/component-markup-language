@@ -15,9 +15,14 @@ cml.cmlToJs(codeStr, [moduleName="[no name specified]"])_;
 codeStr _(string)_: a string value in CML format
 [moduleName="[no name specified]"] _(string)_: name of module
 
+[moduleName="[no name specified]"] _(string)_: name of module
+
+
 **Returns**
 
 _(string)_: a string value in javascript format
+[moduleName="[no name specified]"] _(string)_: name of module
+
 [moduleName="[no name specified]"] _(string)_: name of module
 
 **Example**
@@ -42,6 +47,8 @@ The method `cmlToAst` creates an AST from a CML code string.
 **Arguments**
 
 codeStr _(string)_: a string value in CML format
+[moduleName="[no name specified]"] _(string)_: name of module
+
 [moduleName="[no name specified]"] _(string)_: name of module
 
 **Returns**
@@ -77,6 +84,8 @@ ast *(__[AST](https://github.com/nocturnio/component-markup-language/blob/master
 **Returns**
 
 _(string)_: a string value in javascript format
+[moduleName="[no name specified]"] _(string)_: name of module
+
 [moduleName="[no name specified]"] _(string)_: name of module
 
 **Example**
