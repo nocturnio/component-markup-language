@@ -1,5 +1,11 @@
 # cml.map
 
+Map is a unique function for converting data to UI.
+This is useful for situations where we do not need to define a separate CML module.
+
+Treat maps the same way you would treat a lambda when coding with functions.
+Just like lambdas cml.map is used for short dynamic transformations that do not warrant their own definitions.
+
 ## Mapping Priority
 
 cml.map works on a rules table. The rules table has an order of precedence.
