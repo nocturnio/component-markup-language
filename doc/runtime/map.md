@@ -40,8 +40,8 @@ What if we were to merge the rules into one table?
 
 ``` javascript
 var rules = {
-    "a.b.c.d": "H1"
-    "b.c.d": "H2"
+    "a.b.c.d": "H1",
+    "b.c.d": "H2",
         "d": "H3"
 };
 ```
@@ -85,7 +85,7 @@ var data = {
 
 var rules = {
     "b.c.d": "H3",
-    "x.d": "IMG"
+    "x.d": "IMG",
     "d": "INPUT"
 };
 
@@ -106,7 +106,7 @@ cml.map(data, rules, function (self) {
         d: {
             type: "button"
         }
-    }
+    };
 });
 
 ```
