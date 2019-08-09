@@ -90,9 +90,9 @@ var data = {
 };
 
 var rules = {
-    "b.c.d": "H3",
-    "x.d": "IMG",
-    "d": "INPUT"
+    "b.c.d": "H3.innerHTML",
+    "x.d": "IMG.src",
+    "d": "INPUT.value"
 };
 
 cml.map(data, rules, function (self) {
