@@ -47,7 +47,7 @@ cml.addComponent(componentDefinition)
 
 **Arguments**
 
-componentDefinition *(__[ComponentDefinition](https://github.com/nocturnio/component-markup-language/blob/master/doc/extension/ComponentDefinition.md)__)*: component definition
+componentDefinition *(__[ComponentDefinition](/nocturnio/component-markup-language/blob/master/doc/extension/ComponentDefinition.md)__)*: component definition
 
 **Example**
 ``` javascript
@@ -69,7 +69,7 @@ cml.addModule(moduleDefinition)
 
 **Arguments**
 
-moduleDefinition *(__[ModuleDefinition](https://github.com/nocturnio/component-markup-language/blob/master/doc/extension/ModuleDefinition.md)__)*: module definition
+moduleDefinition *(__[ModuleDefinition](/nocturnio/component-markup-language/blob/master/doc/extension/ModuleDefinition.md)__)*: module definition
 
 **Example**
 ``` javascript
@@ -95,7 +95,7 @@ moduleName _(string)_: name of module definition
 
 **Returns**
 
-*(__[ModuleDefinition](https://github.com/nocturnio/component-markup-language/blob/master/doc/extension/ModuleDefinition.md)__)*: module definition
+*(__[ModuleDefinition](/nocturnio/component-markup-language/blob/master/doc/extension/ModuleDefinition.md)__)*: module definition
 
 ## .getComponent
 
@@ -113,7 +113,7 @@ componentName _(string)_: name of component definition
 
 **Returns**
 
-*(__[ComponentDefinition](https://github.com/nocturnio/component-markup-language/blob/master/doc/extension/ComponentDefinition.md)__)*: component definition
+*(__[ComponentDefinition](/nocturnio/component-markup-language/blob/master/doc/extension/ComponentDefinition.md)__)*: component definition
 
 ## .createComponent
 
@@ -127,7 +127,7 @@ Load a component dynamically. Useful for creating child components.
 
 p _(Object)_: all properties of component or module
 
-m *(__[Module](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__)*: parent module
+m *(__[Module](/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__)*: parent module
 
 componentName _(string)_: component type to create
 
@@ -149,7 +149,7 @@ Loads a list of components dynamically. Will be generated from p.items and p.map
 
 p _(Object)_: all properties of component or module
 
-m *(__[Module](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__)*: parent module
+m *(__[Module](/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__)*: parent module
 
 el _(HTMLElement)_: component html element
 

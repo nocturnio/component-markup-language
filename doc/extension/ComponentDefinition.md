@@ -28,7 +28,7 @@ A ComponentDefinition is a template for creating a component type. After adding 
 
 `p` _(Object)_: component properties
 
-`m` *(__[Module](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__)*: This is the module that component was created in.
+`m` *(__[Module](/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__)*: This is the module that component was created in.
 
 `el` _(HTMLElement | null)_: This is the HTMLElement created as the return of `.create`. If the component is UI-less than el should be null.
 

@@ -13,6 +13,7 @@ cml.cmlToJs(codeStr, [moduleName="[no name specified]"])_;
 **Arguments**
 
 codeStr _(string)_: a string value in CML format
+
 [moduleName="[no name specified]"] _(string)_: name of module
 
 [moduleName="[no name specified]"] _(string)_: name of module
@@ -21,6 +22,7 @@ codeStr _(string)_: a string value in CML format
 **Returns**
 
 _(string)_: a string value in javascript format
+
 [moduleName="[no name specified]"] _(string)_: name of module
 
 [moduleName="[no name specified]"] _(string)_: name of module
@@ -47,13 +49,14 @@ The method `cmlToAst` creates an AST from a CML code string.
 **Arguments**
 
 codeStr _(string)_: a string value in CML format
+
 [moduleName="[no name specified]"] _(string)_: name of module
 
 [moduleName="[no name specified]"] _(string)_: name of module
 
 **Returns**
 
-*(__[AST](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/AST.md)__)*: an abstract syntax tree
+*(__[AST](/nocturnio/component-markup-language/blob/master/doc/compiler/AST.md)__)*: an abstract syntax tree
 
 **Example**
 
@@ -79,11 +82,12 @@ The method `astToJs` converts javascript code from an AST.
 
 **Arguments**
 
-ast *(__[AST](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/AST.md)__)*: Abstract Syntax Tree object
+ast *(__[AST](/nocturnio/component-markup-language/blob/master/doc/compiler/AST.md)__)*: Abstract Syntax Tree object
 
 **Returns**
 
 _(string)_: a string value in javascript format
+
 [moduleName="[no name specified]"] _(string)_: name of module
 
 [moduleName="[no name specified]"] _(string)_: name of module
@@ -112,11 +116,11 @@ The method `buildProject` compiles an html page and a javascript file for runnin
 
 **Arguments**
 
-project *(__[Project](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/Project.md)__)*: Project object
+project *(__[Project](/nocturnio/component-markup-language/blob/master/doc/compiler/Project.md)__)*: Project object
 
 **Returns**
 
-*(__[ProjectResult](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/ProjectResult.md)__)*: compiled result
+*(__[ProjectResult](/nocturnio/component-markup-language/blob/master/doc/compiler/ProjectResult.md)__)*: compiled result
 
 **Example**
 
