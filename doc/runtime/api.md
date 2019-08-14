@@ -19,7 +19,7 @@ moduleName _(string)_: name of module be instanced
 
 **Returns**
 
-*(__[Module](/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__)*: loaded module instance
+*(__[Module](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__)*: loaded module instance
 
 **Example**
 
@@ -101,13 +101,13 @@ Module main {
 cml.map(data, rules, construct)
 ```
 
-`cml.map` maps data to a module, __[more info](/nocturnio/component-markup-language/blob/master/doc/runtime/map.md)__.
+`cml.map` maps data to a module, __[more info](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/map.md)__.
 
 **Arguments**
 
 data _(Object)_: data object for mapping
 
-rules *(__[MapRules](/nocturnio/component-markup-language/blob/master/doc/runtime/map.md)__)*: rules table for mapping data properties to components
+rules *(__[MapRules](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/map.md)__)*: rules table for mapping data properties to components
 
 construct _(Function)_: custom constructor for additional modifications to the output module.
 
@@ -149,7 +149,7 @@ cml.modules()
 Returns all loaded module instances.
 
 **Returns**
-_(Array)_: array of __[modules](/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__ instances
+_(Array)_: array of __[modules](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__ instances
 
 **Example**
 
@@ -180,7 +180,7 @@ moduleName _(string)_: module type to filter
 
 **Returns**
 
-_(Array)_: array of __[modules](/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__ that match moduleName
+_(Array)_: array of __[modules](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__ that match moduleName
 
 **Example**
 
@@ -212,7 +212,7 @@ moduleName _(string)_: module type to filter
 
 **Returns**
 
-*(__[Module](/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__)*: first module that matches moduleName
+*(__[Module](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/module.md)__)*: first module that matches moduleName
 
 **Example**
 
