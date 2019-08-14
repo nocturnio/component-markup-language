@@ -53,7 +53,7 @@ codeStr _(string)_: a string value in CML format
 
 **Returns**
 
-*(__[AST](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/AST.md)__)*: an abstract syntax tree
+*(__[AST](/doc/compiler/AST.md)__)*: an abstract syntax tree
 
 **Example**
 
@@ -79,7 +79,7 @@ The method `astToJs` converts javascript code from an AST.
 
 **Arguments**
 
-ast *(__[AST](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/AST.md)__)*: Abstract Syntax Tree object
+ast *(__[AST](/doc/compiler/AST.md)__)*: Abstract Syntax Tree object
 
 **Returns**
 
@@ -112,11 +112,11 @@ The method `buildProject` compiles an html page and a javascript file for runnin
 
 **Arguments**
 
-project *(__[Project](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/Project.md)__)*: Project object
+project *(__[Project](/doc/compiler/Project.md)__)*: Project object
 
 **Returns**
 
-*(__[ProjectResult](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/ProjectResult.md)__)*: compiled result
+*(__[ProjectResult](/doc/compiler/ProjectResult.md)__)*: compiled result
 
 **Example**
 
