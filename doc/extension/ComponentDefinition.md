@@ -115,9 +115,26 @@ Button {
 {    
     class: "Button",
     refresh: {
-        label: function (p, m, el, instance, value) {
+        label: function (p, m, el, instance, newLabel) {
             // value == "hello"
-        }        
+            // here we can update the element
+            // refresh properties run on cml.refresh cycles
+            // it will only run if the component is visible
+            // and the property value has changed
+            el.value = newLabel;
+        }
+    },
+    create: function (p, m) {
+        // create component element
+        var el = document.createElement("input");
+
+        el.type = "button";
+        el.value = cml.extract(p, "label");
+
+        return el;
+    },
+    instance: function (p, m, el) {
+        return el;
     }
 }
 ```

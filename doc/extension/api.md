@@ -1,6 +1,55 @@
 # CML Extension API
 
-The Extension API is contains methods for adding Modules and Components to CML.
+The Extension API is contains methods extending CML with custom Modules and Components.
+This interface is available in a JavaScript file that is included to the page with cml-runtime.js
+
+On page load, the runtime will load extensions into the language before any modules or components in your .cml files are rendered.
+
+## .addComponent
+``` javascript
+cml.addComponent(componentDefinition)
+```
+
+`cml.addComponent` lets you extend CML with your own custom component.
+
+**Arguments**
+
+componentDefinition *(__[ComponentDefinition](/doc/extension/ComponentDefinition.md)__)*: component definition
+
+**Example**
+``` javascript
+cml.addComponent({
+    class: "Notification",
+    create: function (p, m) {
+        var el = document.createElement("DIV");
+        var label = cml.extract(p, "label");
+        el.appendChild(document.createTextNode(label));
+        return el;
+    }
+});
+```
+
+## .addModule
+``` javascript
+cml.addModule(moduleDefinition)
+```
+
+`cml.addModule` lets you extend CML with your own custom module.
+
+**Arguments**
+
+moduleDefinition *(__[ModuleDefinition](/doc/extension/ModuleDefinition.md)__)*: module definition
+
+**Example**
+``` javascript
+cml.addModule({
+    class: "NavBar",
+    create: function (p, self, dom) {
+        var el = document.createElement("DIV");
+        return el;
+    }
+});
+```
 
 ## .extract
 
@@ -40,47 +89,6 @@ cml.extract(p, "label");
 // => "hello"
 ```
 
-## .addComponent
-``` javascript
-cml.addComponent(componentDefinition)
-```
-
-**Arguments**
-
-componentDefinition *(__[ComponentDefinition](/doc/extension/ComponentDefinition.md)__)*: component definition
-
-**Example**
-``` javascript
-cml.addComponent({
-    class: "Notification",
-    create: function (p, m) {
-        var el = document.createElement("DIV");
-        var label = cml.extract(p, "label");
-        el.appendChild(document.createTextNode(label));
-        return el;
-    }
-});
-```
-
-## .addModule
-``` javascript
-cml.addModule(moduleDefinition)
-```
-
-**Arguments**
-
-moduleDefinition *(__[ModuleDefinition](/doc/extension/ModuleDefinition.md)__)*: module definition
-
-**Example**
-``` javascript
-cml.addModule({
-    class: "NavBar",
-    create: function (p, self, dom) {
-        var el = document.createElement("DIV");
-        return el;
-    }
-});
-```
 
 ## .getModule
 ``` javascript

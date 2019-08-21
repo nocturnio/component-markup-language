@@ -1,6 +1,7 @@
 # CML Runtime API
 
 The Runtime API has methods for creating modules and managing state.
+This interface is available in the context of a .cml file.
 
 ## .new
 
