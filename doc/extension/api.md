@@ -5,6 +5,9 @@ This interface is available in a JavaScript file that is included to the page wi
 
 On page load, the runtime will load extensions into the language before any modules or components in your .cml files are rendered.
 
+
+![architecture](/doc/architecture.png)
+
 ## .addComponent
 ``` javascript
 cml.addComponent(componentDefinition)
