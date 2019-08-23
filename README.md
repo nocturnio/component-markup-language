@@ -2,32 +2,39 @@
 # Component Markup language
 
 CML is a markup language for creating Single Page Applications.
-The primary goal of CML is to make frontend development more accessible without making sacrifices to customization and precision.
-CML takes the complexity out of frontend development and creates an interface that any programmer would understand.
 
-The secondary goal of CML is to consolidate UI libraries and help organize projects.
-CML creates a clear barrier between library creation and library consumption.
-In the library creation layer, web programmers can create components using tools they are familiar with.
-In the library consumption layer, programmers can use components in a simplified interface without worrying about the implementation details.
+We believe that frontend development can be made more descriptive and less complicated.
+
+As a superset of JavaScript, CML leverages the existing web ecosystem in an elegant declarative language.
+
+Build powerful web applications with the most accessible framework to date.
+
 
 ## How to use
 
-### Compilers
+### Existing Implementations
 
-* __[nocturn.io web editor](https://nocturn.io)__
+There are a few ways to use CML right away.
+
+* __[nocturn.io IDE](https://nocturn.io)__
 * __[noct CLI](https://www.npmjs.com/package/noct)__
 
+This repo also has all you need to compile CML code as a JavaScript module.
+It works in browser or on the command line with node.
+You can also create your own CLI or make your own IDE if needed.
 
-### As a NPM package
+### Compiling the Compiler
+
+If you want to build your own CML compiler here are the steps to do so.
 
 **Step 1**: Install in package directory.
 ```
 npm install component-markup-language
 ```
 
-**Step 2**: Choose between the frontend or backend CML compiler.
+**Step 2**: Choose between the browser version or node version of CML compiler.
 
-**Step 3 (Optional)**: If frontend, create a browser compatible js file.
+**Step 3 (Optional)**: If browser version, create a browser compatible js file.
 
 Requires __[Browserify](browserify.org)__ and __[Babel](https://babeljs.io)__
 
@@ -88,8 +95,9 @@ Module moduleName(parameters, ...) {
 
 ## Runtime
 
+The runtime has to be included to any page using compiled CML code.
 The runtime is process based. Meaning each module can be spawned with **cml.new**.
-The one exception is the main module which is specified in the app.json file.
+The one exception is the main module which is specified in the app.json file, this will be launched on app load.
 
 __[CML Runtime API](https://github.com/nocturnio/component-markup-language/blob/master/doc/runtime/api.md)__.
 
@@ -164,7 +172,17 @@ Card counterCard(model) {
 ## Inter-op with javascript
 
 CML is designed to be customizable.
-It can inter-op with the existing javascript ecosystem using the __[CML Extension API](https://github.com/nocturnio/component-markup-language/blob/master/doc/extension/api.md)__.
+It can inter-op with the existing JavaScript ecosystem.
+There are a couple ways to use external JavaScript in CML.
+
+### Just use it
+CML is a superset of javascript. Which means JavaScript can written inside of CML natively.
+
+### Adding Extensions
+Creating custom Components or Modules for CML is easy using the __[Extension API](https://github.com/nocturnio/component-markup-language/blob/master/doc/extension/api.md)__.
+
+The benefit of making an extension is that we can hide away the implementation details.
+Meaning the user of the Module/Component can use a simple interface, without having to learn how it is made.
 
 **Add a component to CML**
 ``` javascript
@@ -190,11 +208,11 @@ Card notificationCard {
 
 **Example of using CML with React**
 
-__[Click Here](https://medium.com/@nocturn4390/making-custom-components-for-cml-15f671b00531)__
+__[Here is an example of using a React component in CML.](https://medium.com/@nocturn4390/making-custom-components-for-cml-15f671b00531)__
 
-## Example
+## Counter Example
 
-We can redo our counter example with a custom component.
+Let's redo the counter example by making a custom Counter component.
 
 **Counter Component**
 ``` javascript
