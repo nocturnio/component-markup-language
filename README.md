@@ -18,13 +18,14 @@ There are a few ways to use CML right away.
 * __[noct CLI](https://www.npmjs.com/package/noct)__
 
 You can also create your own CLI or IDE if needed.
-This repo also has all you need to compile CML code as a JavaScript library.
+This __[repo](https://github.com/nocturnio/component-markup-language)__ has all you need to compile CML code as a JavaScript library.
 It works in browser or on the command line with node.
 
 
 ## Syntax
 
-CML is designed around a simple JSON-like syntax. As a superset of javascript, CML allows one to write any valid javascript code within a Module.
+CML is designed around a simple JSON-like syntax.
+As a superset of javascript, CML allows you to write any valid javascript code.
 
 **Example**
 ``` javascript
