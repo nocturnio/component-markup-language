@@ -1,8 +1,8 @@
 # Project
 
-Project is the representation of a CML project. It is used to build a compiled application. The project's properties represent the pieces that will go into building.
+Project is the representation of a CML project. The object contains all the configurations of your project.
 
-**Example**
+## Project Structure
 
 ``` json
 {
@@ -14,6 +14,26 @@ Project is the representation of a CML project. It is used to build a compiled a
     "loadingOn": true,
     "loadingImg": "/img/loading.gif",
     "embededScript": false,
+    "includeManifest": true,
+    "includeServiceWorker": true,
+    "themeColor": "#f3f3f3",
+    "icons": [
+      {
+        "src": "/cdn/img/logo_192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/cdn/img/logo_512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "background_color": "#3367D6",
+    "display": "standalone",
+    "cacheList": [
+        "/cdn/data.txt"
+    ],
     "files": [{
         "name": "main",
         "value": "Module main {\n    model: {}\n ..."
