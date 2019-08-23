@@ -12,38 +12,14 @@ Build powerful web applications with the most accessible framework to date.
 
 ## How to use
 
-### Existing Implementations
-
 There are a few ways to use CML right away.
 
 * __[nocturn.io IDE](https://nocturn.io)__
 * __[noct CLI](https://www.npmjs.com/package/noct)__
 
-This repo also has all you need to compile CML code as a JavaScript module.
+You can also create your own CLI or IDE if needed.
+This repo also has all you need to compile CML code as a JavaScript library.
 It works in browser or on the command line with node.
-You can also create your own CLI or make your own IDE if needed.
-
-### Compiling the Compiler
-
-If you want to build your own CML compiler here are the steps to do so.
-
-**Step 1**: Install in package directory.
-```
-npm install component-markup-language
-```
-
-**Step 2**: Choose between the browser version or node version of CML compiler.
-
-**Step 3 (Optional)**: If browser version, create a browser compatible js file.
-
-Requires __[Browserify](browserify.org)__ and __[Babel](https://babeljs.io)__
-
-```
-browserify lib/cml-browser.js -o <file-name>.js
-babel <file-name>.js -o <file-name>.js
-```
-
-**Step 4**: Read the __[CML Compiler API](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/api.md)__.
 
 
 ## Syntax
@@ -115,7 +91,7 @@ Card textCard(text) {
 }
 ```
 
-**Compile Runtime File**
+**Create Runtime File**
 
 Requires __[Browserify](browserify.org)__ and __[Babel](https://babeljs.io)__
 
@@ -265,3 +241,25 @@ Card counterCard(model) {
     }
 }
 ```
+
+## Compiling the Compiler
+
+If you want to build your the CML compiler to include to your own projects, here are the steps.
+
+**Step 1**: Install in package directory.
+```
+npm install component-markup-language
+```
+
+**Step 2**: Choose between the browser version or node version of CML compiler.
+
+**Step 3 (Optional)**: If browser version, create a browser compatible js file.
+
+Requires __[Browserify](browserify.org)__ and __[Babel](https://babeljs.io)__
+
+```
+browserify lib/cml-browser.js -o <file-name>.js
+babel <file-name>.js -o <file-name>.js
+```
+
+**Step 4**: Read the __[CML Compiler API](https://github.com/nocturnio/component-markup-language/blob/master/doc/compiler/api.md)__.
